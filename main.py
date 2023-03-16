@@ -6,9 +6,11 @@ def parallel_processing(n, m, data):
 
     for i in range(m):
         x = min(end)
+        #print(x)
         thread = end.index(x)
-        start = end[thread]
-        end[thread] = end[thread] + data[i]
+        start = end[thread] 
+        end[thread] = end[thread]+data[i]
+        
         output.append((thread, start))
         #print(thread)
         #print(start)
@@ -22,7 +24,7 @@ def main():
 
     data = list(map(int, input().split()))
 
-    result = parallel_processing(n,m,data)
+    result = parallel_processing(n ,m ,data)
     
     for i, j in result:
        print(i, j) 
